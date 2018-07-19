@@ -15799,6 +15799,10 @@ textarea,
   background-color: #fff;
 }
 
+.navbar.primary-bg-a7 {
+  background-color: #0059b3;
+}
+
 @media (min-width: 992px) {
   .dropdown-menu.dropdown-menu-right::before {
     right: 24px;
@@ -15871,6 +15875,14 @@ img {
   max-width: 1450px;
 }
 
+.header {
+  font-size: 16px;
+  font-size: 1rem;
+}
+.header a:not(.site-title):not(.social__link) {
+  font-size: 14.224px;
+  font-size: 0.889rem;
+}
 .header .nav-item {
   margin-left: 3.2px;
   margin-left: 0.2rem;
@@ -15882,13 +15894,13 @@ img {
     margin-bottom: 0.1rem;
   }
 }
-.header .nav-item:not(.nav-text):not(.nav-item--no-underline):hover {
+.header .nav-item:not(.nav-text):not(.nav-item--no-underline):hover, .header .nav-item:not(.nav-text):not(.nav-item--no-underline).active {
   border-left: 3.2px solid #fff;
   border-left: 0.2rem solid #fff;
   margin-left: 0;
 }
 @media (min-width: 992px) {
-  .header .nav-item:not(.nav-text):not(.nav-item--no-underline):hover {
+  .header .nav-item:not(.nav-text):not(.nav-item--no-underline):hover, .header .nav-item:not(.nav-text):not(.nav-item--no-underline).active {
     border-left: 0;
     margin-left: 0;
     border-bottom: 0.1rem solid #fff;
@@ -16056,8 +16068,14 @@ img {
 .h1--header {
   font-size: 21.328px;
   font-size: 1.333rem;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: unset;
+}
+@media (min-width: 576px) {
+  .h1--header {
+    font-size: 1.8rem;
+  }
 }
 .h1--header span {
   font-size: 11.2px;
@@ -16069,11 +16087,22 @@ img {
   width: 50px;
   height: 40px;
 }
+@media (min-width: 576px) {
+  .svg--header {
+    width: 65px;
+    height: 60px;
+  }
+}
 
 .h2--header {
   font-size: 14px;
   font-weight: 300;
   letter-spacing: unset;
+}
+@media (min-width: 576px) {
+  .h2--header {
+    line-height: 1.5rem;
+  }
 }
 
 .docs-italia__document-title {
@@ -16155,6 +16184,9 @@ img {
   width: 80%;
   background-color: #fff;
   height: 100vh;
+  margin-left: 0;
+  -webkit-transition: margin-left 0.5s ease-out;
+  transition: margin-left 0.5s ease-out;
 }
 .Offcanvas-menu .Offcanvas-menu__inner .Offcanvas-menu__header {
   padding: 24px 32px 16px 32px;
@@ -16195,6 +16227,10 @@ img {
   font-size: 16px;
   font-size: 1rem;
   display: block;
+}
+.Offcanvas-menu.deactive .Offcanvas-menu__inner {
+  margin-left: -80%;
+  overflow: hidden;
 }
 .Offcanvas-menu .Offcanvas-menu__extra {
   width: 20%;
