@@ -16171,7 +16171,6 @@ img {
 
 .Offcanvas-menu {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
   width: 100vw;
   height: 100vh;
@@ -16180,13 +16179,34 @@ img {
   right: 0;
   bottom: 0;
 }
+.Offcanvas-menu.animate--left {
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+          transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+.Offcanvas-menu.js-active {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+          transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
 .Offcanvas-menu .Offcanvas-menu__inner {
   width: 80%;
   background-color: #fff;
   height: 100vh;
-  margin-left: 0;
-  -webkit-transition: margin-left 0.5s ease-out;
-  transition: margin-left 0.5s ease-out;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 .Offcanvas-menu .Offcanvas-menu__inner .Offcanvas-menu__header {
   padding: 24px 32px 16px 32px;
@@ -16235,6 +16255,39 @@ img {
 .Offcanvas-menu .Offcanvas-menu__extra {
   width: 20%;
   height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+body::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  content: '';
+  opacity: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+  -webkit-transition: opacity 0.4s, -webkit-transform 0s 0.4s;
+  transition: opacity 0.4s, -webkit-transform 0s 0.4s;
+  transition: opacity 0.4s, transform 0s 0.4s;
+  transition: opacity 0.4s, transform 0s 0.4s, -webkit-transform 0s 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+          transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+body.show-menu::before {
+  opacity: 1;
+  -webkit-transition: opacity 0.8s;
+  transition: opacity 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+          transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 
 #desktop-menu {
