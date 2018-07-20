@@ -16110,6 +16110,11 @@ img {
   font-size: 0.9rem;
   font-weight: 400;
   margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 19.2px;
+  line-height: 1.2rem;
 }
 
 .docs-italia__document-title-icon {
@@ -16150,6 +16155,7 @@ img {
 .docs-italia__header-col .btn .it-icon {
   font-size: 20.8px;
   font-size: 1.3rem;
+  display: block;
 }
 
 .info--header {
@@ -16167,6 +16173,63 @@ img {
 }
 .social .social__link:hover, .social .social__link:active {
   text-decoration: none;
+}
+
+@media (max-width: 991.98px) {
+  .article-intro-more .dropdown.show::before {
+    content: '';
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
+.article-intro-more .dropdown .dropdown-toggle::after {
+  display: none;
+}
+.article-intro-more .dropdown .dropdown-menu {
+  background-color: #fff;
+  padding: 8px;
+  padding: 0.5rem;
+  margin: 0;
+  border-radius: 0.2rem;
+  -webkit-box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.35);
+  z-index: 100;
+}
+@media (max-width: 991.98px) {
+  .article-intro-more .dropdown .dropdown-menu {
+    position: fixed !important;
+    z-index: 1001 !important;
+    top: calc(50% - 140px) !important;
+    left: calc(50% - 140px) !important;
+    -webkit-transform: none !important;
+            transform: none !important;
+  }
+  .article-intro-more .dropdown .dropdown-menu::before {
+    display: none;
+  }
+}
+.article-intro-more .dropdown .dropdown-menu .dropdown-item {
+  color: #0073e6;
+}
+
+#rtd-search-form {
+  border: 1px solid #ccc;
+}
+#rtd-search-form input[type="text"] {
+  border: none;
+  height: 100%;
+}
+#rtd-search-form .input-group-append button {
+  background-color: #fff;
+}
+#rtd-search-form .input-group-append button .it-icon-search {
+  font-size: 19.2px;
+  font-size: 1.2rem;
 }
 
 .Offcanvas-menu {

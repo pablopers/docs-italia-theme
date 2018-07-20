@@ -1194,7 +1194,7 @@ module.exports = themeVersionDropdown = (function ($) {
 
       });
 
-      $('#version-list.dropdown').dropdown();
+      // $('#version-list.dropdown').dropdown();
     }
   }
 
